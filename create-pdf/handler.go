@@ -16,14 +16,13 @@ func Handle(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	dir := os.TempDir()
-
 	pdf := gofpdf.New("P", "mm", "A4", "")
 	pdf.AddPage()
+	// pdf.SetFont("Times", "B", 16)
 	pdf.SetFont("Arial", "B", 16)
 	pdf.Cell(40, 10, msg)
 
-	pdfPath := path.Join(dir, "hello.pdf")
+	pdfPath := path.Join(os.TempDir(), "hello.pdf")
 	err := pdf.OutputFileAndClose(pdfPath)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -38,8 +37,6 @@ func Handle(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-type", "application/octet-stream")
 	w.Header().Set("Content-Disposition", `attachment; filename="content.pdf"`)
-
 	w.WriteHeader(http.StatusOK)
-
 	w.Write(res)
 }

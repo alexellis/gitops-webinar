@@ -7,4 +7,3 @@ functions:
     lang: golang-middleware
     handler: ./create-pdf
     image: alexellis/create-pdf:0.1.1
-
