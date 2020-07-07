@@ -18,8 +18,8 @@ func Handle(w http.ResponseWriter, r *http.Request) {
 
 	pdf := gofpdf.New("P", "mm", "A4", "")
 	pdf.AddPage()
-	// pdf.SetFont("Times", "B", 16)
-	pdf.SetFont("Arial", "B", 16)
+	pdf.SetFont("Times", "B", 16)
+	// pdf.SetFont("Arial", "B", 16)
 	pdf.Cell(40, 10, msg)
 
 	pdfPath := path.Join(os.TempDir(), "hello.pdf")

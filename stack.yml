@@ -6,4 +6,6 @@ functions:
   create-pdf:
     lang: golang-middleware
     handler: ./create-pdf
-    image: alexellis/create-pdf:0.1.2
+    image: alexellis/create-pdf:0.2.0
+    build_args:
+      GO111MODULE: on
