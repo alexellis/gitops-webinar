@@ -1,7 +1,13 @@
 # Go example function for use with OpenFaaS Cloud and Flux
 
-This function uses [gofpdf](https://github.com/phpdave11/gofpdf) - a Go library for creating PDFs
+This example integrates with OpenFaaS Cloud and OpenFaaS. You can also package it as a CRD to use with flux with `faas-cli generate`.
 
-> 2020-07-07 - Now with Go modules
+## Functions:
+
+* [create-pdf](https://github.com/alexellis/gitops-webinar/tree/master/create-pdf) - generate a PDF using the [gofpdf](https://github.com/phpdave11/gofpdf) library - from the given query string `?msg=say+hello`
 
 Access it on OpenFaaS Cloud via: `https://alexellis.o6s.io/create-pdf?msg=Your+Message+here`, or clone your own and deploy to your cluster.
+
+## Changelog:
+
+* 07 July 2020 - moved to use Go modules instead of dep and vendoring.
