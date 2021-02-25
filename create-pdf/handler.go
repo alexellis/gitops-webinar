@@ -29,6 +29,7 @@ func Handle(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+
 	res, err := ioutil.ReadFile(pdfPath)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
